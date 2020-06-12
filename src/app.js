@@ -1,0 +1,11 @@
+'use strict';
+const Koa = require('koa');
+const bodyParser = require( 'koa-bodyparser' );
+const koaRouter = require( 'koa-router' )();
+const router = require('./router');
+const config = require('../config/config');
+const app = new Koa();
+app.use(bodyParser());
+router({ router: koaRouter });
+app.use(koaRouter.routes(), koaRouter.allowedMethods());
+module.exports = app.listen( config.port, () => console.log( `Server running at 127.0.0.1:${config.port}` ) );
