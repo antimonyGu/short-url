@@ -1,5 +1,5 @@
 # short-url
-
+This is a take home project, and I put it on my github.
 ## requirements
 - node 12.16.1
 - MongoDB shell version v4.0.3
